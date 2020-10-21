@@ -20,6 +20,11 @@ namespace calculadoramadeinChina
             System.Console.WriteLine("0) Salir de la aplicación");
         }
 
+        public static void PrintAddMenu()
+        {
+            System.Console.WriteLine("            Suma de números            ");
+            System.Console.WriteLine("---------------------------------------");
+        }
         public static int ReadOption()
         {
             string option = System.Console.ReadLine();

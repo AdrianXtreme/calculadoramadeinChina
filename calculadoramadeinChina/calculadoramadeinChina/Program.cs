@@ -4,24 +4,45 @@ namespace calculadoramadeinChina
 {
     class Program
     {
-        public static void ManageMainMenu()
+        public static void ManageAddMenu()
         {
             while (true)
             {
+                UserInterface.PrintAddMenu();
+
+            }
+        }
+        public static void ManageMainMenu()
+        {
+            bool finished = false;
+            while (finished == false)
+            {
                 UserInterface.PrintMainMenu();
                 int option = UserInterface.ReadOption();
-                if (option == 0)
-                    break;
-                else if (option > 0)
+                switch (option)
                 {
-                    System.Console.Clear();
-                    System.Console.WriteLine("Opción no válida");
+                    case -1:
+                        System.Console.Clear();
+                        System.Console.WriteLine("Opción no válida");
+                        break;
+                    case 1:
+                        ManageAddMenu();          
+                        break;
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                    case 6:
+                    case 7:
+                    case 0:
+                        finished = true;
+                        break;
+
                 }
-                else if (option > 0 || option == -1)
-                {
-                    System.Console.Clear();
-                    System.Console.WriteLine("Opción no válida, introduce un número entre el 0 y el 7");
-                }         
+
+
+                if (option == 0)
+                    break;               
             }
 
         }

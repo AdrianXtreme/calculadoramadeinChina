@@ -12,12 +12,12 @@ namespace calculadoramadeinChina
                 int option = UserInterface.ReadOption();
                 if (option == 0)
                     break;
-                else if (option == -1)
+                else if (option > 0)
                 {
                     System.Console.Clear();
                     System.Console.WriteLine("Opción no válida");
                 }
-                else if (option < 0 || option > 7)
+                else if (option > 0 || option == -1)
                 {
                     System.Console.Clear();
                     System.Console.WriteLine("Opción no válida, introduce un número entre el 0 y el 7");

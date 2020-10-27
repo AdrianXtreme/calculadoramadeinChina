@@ -4,7 +4,7 @@ namespace calculadoramadeinChina
 {
     class Program
     {
-        public static void ManageAddSubmenu(int Accumuled)
+        public static int ManageAddSubmenu(int Accumuled)
         {
             while (true)
             {
@@ -15,15 +15,13 @@ namespace calculadoramadeinChina
                 //Accumuled += number;
                 System.Console.WriteLine("Llevas acumulado: " + Accumuled);
                 UserInterface.PrintAddSubmenu();
-                int option = UserInterface.ReadOption();
+                int option = UserInterface.ReadMenuOption();
                 switch (option)
                 {
                     case 0:
-                        break;
-                    case 1:
-                        break;
+                        return 0;                    
                     case 2:
-                        break;
+                        return 2;
                 }
             }
         }
@@ -37,7 +35,7 @@ namespace calculadoramadeinChina
                 int result = number1 + number2;
                 System.Console.WriteLine("El resultado es " + result);
                 UserInterface.PrintAddSubmenu();
-                int option = UserInterface.ReadOption();
+                int option = UserInterface.ReadMenuOption();
                 if (option == 0)
                 {
                     return;
@@ -50,7 +48,9 @@ namespace calculadoramadeinChina
 
                 else if (option == 1)
                 {
-                    ManageAddSubmenu(result);
+                    int submenu_option = ManageAddSubmenu(result);
+                    if (submenu_option == 0)
+                        return;
                 }
             }
         }
@@ -60,7 +60,7 @@ namespace calculadoramadeinChina
             while (finished == false)
             {
                 UserInterface.PrintMainMenu();
-                int option = UserInterface.ReadOption();
+                int option = UserInterface.ReadMenuOption();
                 switch (option)
                 {
                     case -1:

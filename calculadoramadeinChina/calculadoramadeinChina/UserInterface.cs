@@ -35,7 +35,33 @@ namespace calculadoramadeinChina
             System.Console.WriteLine("0) Salir al menú principal");
 
         }
-.
+
+        public static void PrintSubHeader()
+        {
+            System.Console.WriteLine("            Resta de números           ");
+            System.Console.WriteLine("---------------------------------------");
+        }
+
+        public static void PrintSubSubmenu()
+        {
+            System.Console.WriteLine("1) Restar otro número");
+            System.Console.WriteLine("2) Realizar otra resta");
+            System.Console.WriteLine("0) Salir al menú principal");
+        }
+
+        public static void PrintMulHeader()
+        {
+            System.Console.WriteLine("       Multiplicación de números       ");
+            System.Console.WriteLine("---------------------------------------");
+        }
+
+        public static void PrintMulSubmenu()
+        {
+            System.Console.WriteLine("1) Multiplicar otro número");
+            System.Console.WriteLine("2) Realizar otra multiplicación");
+            System.Console.WriteLine("0) Salir al menú principal");
+        }
+
         public static int ReadMenuOption()
         {
             string option = System.Console.ReadLine();
